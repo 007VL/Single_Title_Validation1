@@ -6,13 +6,15 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
 public class Firefox {
-	public static void main(String[] args) {
+	public static void main(String[] v) {
 
 		WebDriver driver = new FirefoxDriver();    // Version 1.1 :: Firefox
 
 		String text_case_id = "TC-001.01";
-		String url = "https://www.google.com/";
-		String title_expected = "Google";
+		String param[] = v[0].split("\\|");
+		
+		String url = param[0];
+		String title_expected = param[1];
 		
 		driver.get(url);
 		driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
